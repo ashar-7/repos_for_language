@@ -18,7 +18,7 @@ for language in languages :
     resp = requests.get('https://api.github.com/search/repositories?q=language:' + language)
     data = resp.json()
     
-    number_of_repos[language] = data.get('total_count', 'undefined') # add undefined if the key is not found
+    number_of_repos[language] = data.get('total_count', '0') # add 0 if the key is not found
 
 # print the sorted dictionary
 for language, repos in sorted(number_of_repos.items(), key=lambda x:x[1], reverse=True) :
