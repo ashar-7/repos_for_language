@@ -1,0 +1,26 @@
+import requests
+import json
+
+languages = [
+    'javascript',
+    'html',
+    'css',
+    'php',
+    'python',
+    'ruby',
+    'java',
+    'c#',
+    'c++',
+    'c'
+]
+
+number_of_repos = {} # language: no. of repos
+
+for language in languages :
+    resp = requests.get('https://api.github.com/search/repositories?q=language:' + language)
+    data = resp.json()
+    
+    number_of_repos[language] = data.get('total_count', 'undefined') # add undefined if the key is not found
+
+for language, repos in number_of_repos.items() :
+    print(language,": ", repos)
