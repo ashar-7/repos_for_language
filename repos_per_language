@@ -12,7 +12,6 @@ languages = [
     'c++',
     'c'
 ]
-
 number_of_repos = {} # language: no. of repos
 
 for language in languages :
