@@ -20,6 +20,15 @@ for language in languages :
     
     number_of_repos[language] = data.get('total_count', 'undefined') # add undefined if the key is not found
 
-# print the sorted dictionary
+# print and draw graph of the sorted dictionary
+x = 10
+locs = []
 for language, repos in sorted(number_of_repos.items(), key=lambda x:x[1], reverse=True) :
     print(language,": ", repos)
+
+    plt.bar(x, int(repos), 5, tick_label=language)
+    locs.append(x)
+    x += 10
+
+plt.xticks(locs, number_of_repos.keys())
+plt.show()
