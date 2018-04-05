@@ -22,5 +22,6 @@ for language in languages :
     
     number_of_repos[language] = data.get('total_count', 'undefined') # add undefined if the key is not found
 
-for language, repos in number_of_repos.items() :
+# print the sorted dictionary
+for language, repos in sorted(number_of_repos.items(), key=lambda x:x[1], reverse=True) :
     print(language,": ", repos)
