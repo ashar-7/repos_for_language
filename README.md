@@ -1,4 +1,4 @@
-# repos_per_languages
+# repos_for_languages
 Finds and prints the number of repositories present on GitHub for the specified languages using the GitHub API.
 
 Make sure you have an internet connection before running the script.
